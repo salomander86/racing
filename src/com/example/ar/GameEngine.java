@@ -1,5 +1,8 @@
 package com.example.ar;
 
+import java.util.Iterator;
+import java.util.Timer;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -8,8 +11,10 @@ import android.os.Message;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class GameEngine extends View {
+	
 
 	int offset = 30;
 	MyCar mc = new MyCar(getContext());
@@ -118,13 +123,16 @@ public class GameEngine extends View {
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
 		super.onDraw(canvas);
+
 		car.move();
 		tank.move();
 		r.move();
+		onImpact();
 
 		canvas.drawBitmap(r.road, r.road1X, r.road1Y, p);
 		canvas.drawBitmap(r.road, r.road2X, r.road2Y, p);
 		canvas.drawBitmap(tank.bigObstacle, tank.x, tank.y, p);
+
 		canvas.drawBitmap(car.smallObstacle, car.x, car.y, p);
 
 		if (mc.isTurnRight) {
@@ -137,6 +145,15 @@ public class GameEngine extends View {
 
 		mc.s += mc.v;
 		invalidate();
+		}
+
+
+	private void onImpact() {
+		// TODO Auto-generated method stub
+		if(mc.rectMC.intersect(car.rectOC)){
+			Toast toast = Toast.makeText(getContext(), "CRASH", Toast.LENGTH_LONG);
+			toast.show();
+		}
 	}
 
 }

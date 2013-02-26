@@ -11,13 +11,16 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int bug=0x7f020000;
-        public static final int cartextureup=0x7f020001;
-        public static final int carturnleft=0x7f020002;
-        public static final int carturnright=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int road2white=0x7f020005;
-        public static final int tank=0x7f020006;
+        public static final int blackcar=0x7f020000;
+        public static final int bug=0x7f020001;
+        public static final int cartextureup=0x7f020002;
+        public static final int carturnleft=0x7f020003;
+        public static final int carturnright=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int redcar=0x7f020006;
+        public static final int road2white=0x7f020007;
+        public static final int tank=0x7f020008;
+        public static final int whitecar=0x7f020009;
     }
     public static final class id {
         public static final int menu_settings=0x7f040001;

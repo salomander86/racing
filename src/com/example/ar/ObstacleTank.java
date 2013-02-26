@@ -5,6 +5,7 @@ import java.util.Random;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.view.View;
 
 public class ObstacleTank extends View implements Runnable  {
@@ -18,6 +19,8 @@ public class ObstacleTank extends View implements Runnable  {
 	public ObstacleTank(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
+		Rect rectOT = new Rect();
+		rectOT.contains(x, y, 150, 314);
 	}
 		
 		@Override
